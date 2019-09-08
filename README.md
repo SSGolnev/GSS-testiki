@@ -1,2 +1,2 @@
 # Android-todo-kotlin-app
-Simple Todo app(with the option to store todos encrypted) made in Kotlin
+Simple Todo app(with the option to encrypt todos with a password) made in Kotlin
