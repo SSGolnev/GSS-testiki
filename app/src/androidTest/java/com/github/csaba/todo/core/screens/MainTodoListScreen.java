@@ -29,6 +29,12 @@ public class MainTodoListScreen extends BaseScreen {
         return new CreateTaskScreen();
     }
 
+    public MainTodoListScreen deleteTask(String taskName) {
+        assertDisplayed(getTaskFullCardMatcher(taskName));
+        clickOn(getDoneBtnForTaskWithNameMatcher(taskName));
+        return this;
+    }
+
     @NotNull
     private Matcher<View> getAddTaskBtn() {
         return withId(R.id.action_add_task);
@@ -38,6 +44,13 @@ public class MainTodoListScreen extends BaseScreen {
         return allOf(
                 allOf(withId(R.id.task_title), withText(taskText)),
                 hasSibling(withId(R.id.task_delete))
+        );
+    }
+
+    public static Matcher<View> getDoneBtnForTaskWithNameMatcher(String taskText) {
+        return allOf(
+                withId(R.id.task_delete),
+                hasSibling(allOf(withId(R.id.task_title), withText(taskText)))
         );
     }
 }
