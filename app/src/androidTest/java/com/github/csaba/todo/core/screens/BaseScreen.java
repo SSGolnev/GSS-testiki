@@ -6,6 +6,5 @@ public abstract class BaseScreen {
         validate();
     }
 
-    protected void validate() {
-    }
+    abstract protected void validate();
 }

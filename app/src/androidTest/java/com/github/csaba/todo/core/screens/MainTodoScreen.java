@@ -28,8 +28,9 @@ public class MainTodoScreen extends BaseScreen {
         assertDisplayed(getChangePasswordBtn());
     }
 
-    public void clickTodoListBtn() {
+    public TodoListScreen clickTodoListBtn() {
         clickOn(getTodoListBtn());
+        return new TodoListScreen();
     }
 
     public CreateNewPasswordScreen clickSecretListBtnFirstTime() {
