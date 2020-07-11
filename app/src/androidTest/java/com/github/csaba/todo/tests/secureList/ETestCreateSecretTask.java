@@ -1,20 +1,27 @@
-package com.github.csaba.todo.tests;
+package com.github.csaba.todo.tests.secureList;
 
 import com.github.csaba.todo.core.screens.MainTodoScreen;
+import com.github.csaba.todo.tests.BaseEspressoTest;
 
 import org.junit.Test;
 
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 import static com.github.csaba.todo.core.screens.MainTodoListScreen.getTaskFullCardMatcher;
 
-public class ETestCreateTodoTask extends BaseEspressoTest {
+public class ETestCreateSecretTask extends BaseEspressoTest {
 
+    private static final String PASSWORD = "Password12345";
     private static final String TASK_NAME = "TaskName123";
 
     @Test
-    public void eTestCreateTodoTask() {
+    public void eTestCreateSecretTask() {
         new MainTodoScreen()
-                .clickTodoListBtn()
+                .clickSecretListBtnFirstTime()
+                .setNewPassword(PASSWORD)
+                .confirmNewPassword()
+                .clickSecretListBtn()
+                .setPassword(PASSWORD)
+                .confirmPassword()
                 .createNewTask()
                 .setNewTask(TASK_NAME)
                 .confirmNewTask();

@@ -1,6 +1,7 @@
-package com.github.csaba.todo.tests;
+package com.github.csaba.todo.tests.password;
 
 import com.github.csaba.todo.core.screens.MainTodoScreen;
+import com.github.csaba.todo.tests.BaseEspressoTest;
 
 import org.junit.Test;
 
