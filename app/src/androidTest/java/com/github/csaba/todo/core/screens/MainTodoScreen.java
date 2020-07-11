@@ -47,8 +47,9 @@ public class MainTodoScreen extends BaseScreen {
         return new CreateNewPasswordScreen();
     }
 
-    public void clickChangePasswordBtn() {
+    public ChangePasswordScreen clickChangePasswordBtn() {
         clickOn(getChangePasswordBtn());
+        return new ChangePasswordScreen();
     }
 
     @NotNull

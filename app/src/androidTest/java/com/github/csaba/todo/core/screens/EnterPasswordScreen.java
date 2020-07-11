@@ -39,6 +39,11 @@ public class EnterPasswordScreen extends BaseScreen {
         return new SecureTodoListScreen();
     }
 
+    public InvalidatePasswordScreen confirmInvalidatePassword() {
+        clickOn(withText("OK"));
+        return new InvalidatePasswordScreen();
+    }
+
     @NotNull
     private Matcher<View> getOKBtn() {
         return withText("OK");
