@@ -12,6 +12,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.github.csaba.todo.core.helpers.ActionsHelper.clickOn;
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
+import static com.github.csaba.todo.core.helpers.AssertsHelper.assertNotExist;
 import static org.hamcrest.Matchers.allOf;
 
 public class MainTodoListScreen extends BaseScreen {
@@ -32,6 +33,7 @@ public class MainTodoListScreen extends BaseScreen {
     public MainTodoListScreen deleteTask(String taskName) {
         assertDisplayed(getTaskFullCardMatcher(taskName));
         clickOn(getDoneBtnForTaskWithNameMatcher(taskName));
+        assertNotExist(getTaskFullCardMatcher(taskName));
         return this;
     }
 
