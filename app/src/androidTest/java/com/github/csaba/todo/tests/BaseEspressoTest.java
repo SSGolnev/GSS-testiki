@@ -17,11 +17,15 @@ public class BaseEspressoTest {
 
     @Before
     public void beforeTest() {
-        getInstrumentation().getUiAutomation().executeShellCommand("rm -r /data/data/com.github.csaba.todo/databases");
+        cleanDB();
     }
 
     @After
     public void afterTest() {
+        cleanDB();
+    }
+
+    private void cleanDB() {
         getInstrumentation().getUiAutomation().executeShellCommand("rm -r /data/data/com.github.csaba.todo/databases");
     }
 }
