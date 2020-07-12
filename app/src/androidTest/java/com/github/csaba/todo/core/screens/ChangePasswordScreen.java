@@ -5,13 +5,15 @@ import android.view.View;
 import org.hamcrest.Matcher;
 import org.jetbrains.annotations.NotNull;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.replaceText;
 import static android.support.test.espresso.matcher.ViewMatchers.withHint;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.github.csaba.todo.core.helpers.ActionsHelper.clickOn;
+import static com.github.csaba.todo.core.helpers.ActionsHelper.replaceTextIn;
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 
+/**
+ * Диалог смены пароля.
+ */
 public class ChangePasswordScreen extends BaseScreen {
 
     @Override
@@ -26,17 +28,17 @@ public class ChangePasswordScreen extends BaseScreen {
     }
 
     public ChangePasswordScreen setOldPassword(String oldPassword) {
-        onView(getOldPasswordField()).perform(replaceText(oldPassword));
+        replaceTextIn(getOldPasswordField(), oldPassword);
         return this;
     }
 
     public ChangePasswordScreen setNewPassword(String newPassword) {
-        onView(getNewPasswordField()).perform(replaceText(newPassword));
+        replaceTextIn(getNewPasswordField(), newPassword);
         return this;
     }
 
     public ChangePasswordScreen setConfirmNewPassword(String confirmNewPassword) {
-        onView(getConfirmNewPasswordField()).perform(replaceText(confirmNewPassword));
+        replaceTextIn(getConfirmNewPasswordField(), confirmNewPassword);
         return this;
     }
 

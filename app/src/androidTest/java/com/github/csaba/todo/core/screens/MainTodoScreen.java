@@ -15,6 +15,9 @@ import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.instanceOf;
 
+/**
+ * Основной экран приложения с кнопками выбора списков и смены пароля.
+ */
 public class MainTodoScreen extends BaseScreen {
 
     public MainTodoScreen() {

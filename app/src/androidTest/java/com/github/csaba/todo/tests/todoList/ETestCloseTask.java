@@ -8,6 +8,9 @@ import org.junit.Test;
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 import static com.github.csaba.todo.core.screens.MainTodoListScreen.getTaskFullCardMatcher;
 
+/**
+ * Тест проверяет закрытие обычной задачи
+ */
 public class ETestCloseTask extends BaseEspressoTest {
 
     private static final String TASK_NAME_1 = "TaskName123";

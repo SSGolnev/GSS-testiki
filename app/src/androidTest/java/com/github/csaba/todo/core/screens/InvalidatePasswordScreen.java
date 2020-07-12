@@ -9,6 +9,9 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.github.csaba.todo.core.helpers.ActionsHelper.clickOn;
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 
+/**
+ * Диалог ошибки ввода пароля
+ */
 public class InvalidatePasswordScreen extends BaseScreen {
 
     @Override

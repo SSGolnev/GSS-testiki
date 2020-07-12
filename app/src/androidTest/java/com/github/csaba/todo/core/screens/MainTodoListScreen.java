@@ -15,6 +15,9 @@ import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertNotExist;
 import static org.hamcrest.Matchers.allOf;
 
+/**
+ * Базовый экран списка задач
+ */
 public class MainTodoListScreen extends BaseScreen {
 
     MainTodoListScreen() {

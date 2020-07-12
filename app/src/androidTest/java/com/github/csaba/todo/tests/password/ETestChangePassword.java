@@ -5,6 +5,9 @@ import com.github.csaba.todo.tests.BaseEspressoTest;
 
 import org.junit.Test;
 
+/**
+ * Тест проверяет смену пароля
+ */
 public class ETestChangePassword extends BaseEspressoTest {
 
     private static final String PASSWORD = "Password12345";

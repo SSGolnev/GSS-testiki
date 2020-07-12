@@ -6,6 +6,9 @@ import com.github.csaba.todo.tests.BaseEspressoTest;
 
 import org.junit.Test;
 
+/**
+ * Тест проверяет создание пароля
+ */
 public class ETestSetPassword extends BaseEspressoTest {
 
     private static final String NEW_PASSWORD = "Password12345";

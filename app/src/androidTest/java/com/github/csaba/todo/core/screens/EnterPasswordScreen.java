@@ -10,11 +10,10 @@ import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.jetbrains.annotations.NotNull;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.replaceText;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.github.csaba.todo.core.helpers.ActionsHelper.clickOn;
+import static com.github.csaba.todo.core.helpers.ActionsHelper.replaceTextIn;
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 import static org.hamcrest.Matchers.allOf;
 
@@ -29,14 +28,14 @@ public class EnterPasswordScreen extends BaseScreen {
         assertDisplayed(getOKBtn());
     }
 
-    public EnterPasswordScreen setPassword(String newPassword) {
-        onView(getPasswordField()).perform(replaceText(newPassword));
+    public EnterPasswordScreen setPassword(String password) {
+        replaceTextIn(getPasswordField(), password);
         return this;
     }
 
-    public SecureTodoListScreen confirmPassword() {
+    public SecretTodoListScreen confirmPassword() {
         clickOn(withText("OK"));
-        return new SecureTodoListScreen();
+        return new SecretTodoListScreen();
     }
 
     public InvalidatePasswordScreen confirmInvalidatePassword() {

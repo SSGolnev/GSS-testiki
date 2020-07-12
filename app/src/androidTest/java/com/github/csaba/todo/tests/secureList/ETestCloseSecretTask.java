@@ -8,6 +8,9 @@ import org.junit.Test;
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 import static com.github.csaba.todo.core.screens.MainTodoListScreen.getTaskFullCardMatcher;
 
+/**
+ * Тест проверяет закрытие секретной задачи
+ */
 public class ETestCloseSecretTask extends BaseEspressoTest {
 
     private static final String PASSWORD = "Password12345";

@@ -7,12 +7,14 @@ import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.jetbrains.annotations.NotNull;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.replaceText;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.github.csaba.todo.core.helpers.ActionsHelper.clickOn;
+import static com.github.csaba.todo.core.helpers.ActionsHelper.replaceTextIn;
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 
+/**
+ * Диалог создания нового пароля
+ */
 public class CreateNewPasswordScreen extends BaseScreen {
 
     @Override
@@ -25,7 +27,7 @@ public class CreateNewPasswordScreen extends BaseScreen {
     }
 
     public CreateNewPasswordScreen setNewPassword(String newPassword) {
-        onView(getPasswordField()).perform(replaceText(newPassword));
+        replaceTextIn(getPasswordField(), newPassword);
         return this;
     }
 

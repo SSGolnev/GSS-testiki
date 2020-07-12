@@ -7,10 +7,9 @@ import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.jetbrains.annotations.NotNull;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.replaceText;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.github.csaba.todo.core.helpers.ActionsHelper.clickOn;
+import static com.github.csaba.todo.core.helpers.ActionsHelper.replaceTextIn;
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 
 public class CreateTaskScreen extends BaseScreen {
@@ -24,8 +23,8 @@ public class CreateTaskScreen extends BaseScreen {
         assertDisplayed(getAddBtn());
     }
 
-    public CreateTaskScreen setNewTask(String newTask) {
-        onView(getTaskField()).perform(replaceText(newTask));
+    public CreateTaskScreen setNewTask(String newTaskText) {
+        replaceTextIn(getTaskField(), newTaskText);
         return this;
     }
 

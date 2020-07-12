@@ -1,13 +1,9 @@
 package com.github.csaba.todo.core.screens;
 
 /**
- * Экран списка задач
+ * Экран списка секретных задач
  */
-public class TodoListScreen extends MainTodoListScreen {
-
-    public TodoListScreen() {
-
-    }
+public class SecretTodoListScreen extends MainTodoListScreen {
 
     @Override
     protected void validate() {

@@ -9,6 +9,9 @@ import static android.support.test.espresso.assertion.ViewAssertions.doesNotExis
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 
+/**
+ * Класс ассертов для работы с матчерами
+ */
 public class AssertsHelper {
     private AssertsHelper() {
     }
