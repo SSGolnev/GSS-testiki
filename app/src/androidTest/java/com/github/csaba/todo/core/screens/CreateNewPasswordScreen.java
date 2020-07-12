@@ -15,15 +15,15 @@ import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 /**
  * Диалог создания нового пароля
  */
-public class CreateNewPasswordScreen extends BaseScreen {
+public class CreateNewPasswordScreen extends MainDialogScreen {
 
     @Override
     protected void validate() {
+        super.validate();
         assertDisplayed(withText("Enter NEW password"));
         assertDisplayed(withText("Minimum 8 characters"));
         assertDisplayed(getPasswordField());
         assertDisplayed(withText("Cancel"));
-        assertDisplayed(getOKBtn());
     }
 
     public CreateNewPasswordScreen setNewPassword(String newPassword) {
@@ -39,10 +39,5 @@ public class CreateNewPasswordScreen extends BaseScreen {
     @NotNull
     private Matcher<View> getPasswordField() {
         return Matchers.<View>instanceOf(EditText.class);
-    }
-
-    @NotNull
-    private Matcher<View> getOKBtn() {
-        return withText("OK");
     }
 }

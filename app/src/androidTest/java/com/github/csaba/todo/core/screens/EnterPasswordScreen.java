@@ -17,15 +17,15 @@ import static com.github.csaba.todo.core.helpers.ActionsHelper.replaceTextIn;
 import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 import static org.hamcrest.Matchers.allOf;
 
-public class EnterPasswordScreen extends BaseScreen {
+public class EnterPasswordScreen extends MainDialogScreen {
 
     @Override
     protected void validate() {
+        super.validate();
         assertDisplayed(allOf(withId(R.id.alertTitle), withText("Enter password")));
         assertDisplayed(allOf(Matchers.<View>instanceOf(AppCompatTextView.class), withText("Enter password")));
         assertDisplayed(getPasswordField());
         assertDisplayed(withText("Cancel"));
-        assertDisplayed(getOKBtn());
     }
 
     public EnterPasswordScreen setPassword(String password) {
@@ -41,11 +41,6 @@ public class EnterPasswordScreen extends BaseScreen {
     public InvalidatePasswordScreen confirmInvalidatePassword() {
         clickOn(withText("OK"));
         return new InvalidatePasswordScreen();
-    }
-
-    @NotNull
-    private Matcher<View> getOKBtn() {
-        return withText("OK");
     }
 
     @NotNull

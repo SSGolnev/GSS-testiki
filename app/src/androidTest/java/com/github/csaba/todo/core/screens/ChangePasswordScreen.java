@@ -14,14 +14,14 @@ import static com.github.csaba.todo.core.helpers.AssertsHelper.assertDisplayed;
 /**
  * Диалог смены пароля.
  */
-public class ChangePasswordScreen extends BaseScreen {
+public class ChangePasswordScreen extends MainDialogScreen {
 
     @Override
     protected void validate() {
+        super.validate();
         assertDisplayed(withText("Enter NEW password"));
         assertDisplayed(withText("Minimum 8 characters"));
         assertDisplayed(withText("Cancel"));
-        assertDisplayed(getOKBtn());
         assertDisplayed(getOldPasswordField());
         assertDisplayed(getNewPasswordField());
         assertDisplayed(getConfirmNewPasswordField());
@@ -45,11 +45,6 @@ public class ChangePasswordScreen extends BaseScreen {
     public SuccesfullChangePasswordScreen confirmNewPassword() {
         clickOn(getOKBtn());
         return new SuccesfullChangePasswordScreen();
-    }
-
-    @NotNull
-    private Matcher<View> getOKBtn() {
-        return withText("OK");
     }
 
     @NotNull
