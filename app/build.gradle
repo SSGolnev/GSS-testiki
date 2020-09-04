@@ -32,4 +32,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.scottyab:aescrypt:0.0.1'
     implementation 'at.favre.lib:bcrypt:0.8.0'
+
+    androidTestImplementation "io.qameta.allure:allure-kotlin-model:2.1.1"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-commons:2.1.1"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-junit4:2.1.1"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-android:2.1.1"
 }
